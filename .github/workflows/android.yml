@@ -33,8 +33,10 @@ jobs:
           npm install @capacitor/core @capacitor/cli @capacitor/android
 
       - name: Capacitor sync
-        run: npx cap sync android
-
+- name: Capacitor sync
+  run: |
+    npm install
+    ./node_modules/.bin/cap sync android
       - name: Build APK
         run: |
           cd android
