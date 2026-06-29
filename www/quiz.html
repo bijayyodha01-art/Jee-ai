@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JEE Quiz</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body{
+font-family:Arial;
+background:#111827;
+color:white;
+padding:20px;
+}
+
+.box{
+background:#1f2937;
+padding:20px;
+border-radius:15px;
+}
+
+button{
+padding:12px;
+margin:8px;
+border-radius:10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>📝 JEE Quiz</h1>
+
+<h3 id="question"></h3>
+
+<button onclick="answer(1)">Option A</button>
+<button onclick="answer(2)">Option B</button>
+
+<h2 id="score"></h2>
+
+</div>
+
+
+<script>
+
+let score=0;
+
+let q=[
+{
+text:"2+2 = ?",
+ans:1
+},
+{
+text:"Water formula?",
+ans:2
+}
+];
+
+
+let i=0;
+
+function load(){
+
+document.getElementById("question").innerHTML=q[i].text;
+
+}
+
+function answer(x){
+
+if(x==q[i].ans){
+score++;
+}
+
+i++;
+
+if(i<q.length){
+load();
+}
+else{
+document.getElementById("score").innerHTML=
+"Your Score: "+score;
+}
+
+}
+
+load();
+
+</script>
+
+</body>
+</html>
